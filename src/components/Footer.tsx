@@ -25,10 +25,10 @@ export default function Footer({ onNavigate }: FooterProps) {
           <div>
             <h4 className="font-semibold mb-4">Навигация</h4>
             <nav className="flex flex-col gap-2">
-              {['О питомнике', 'Производители', 'Котята', 'Контакты'].map((item, idx) => (
+              {['О питомнике', 'Производители', 'Котята', 'Выставки', 'Контакты'].map((item, idx) => (
                 <button
                   key={item}
-                  onClick={() => onNavigate(['about', 'producers', 'kittens', 'contacts'][idx])}
+                  onClick={() => onNavigate(['about', 'producers', 'kittens', 'exhibitions', 'contacts'][idx])}
                   className="text-sm text-muted-foreground hover:text-primary transition-colors text-left"
                 >
                   {item}
