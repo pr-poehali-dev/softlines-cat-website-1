@@ -15,6 +15,7 @@ export default function Header({ onNavigate, currentPage }: HeaderProps) {
     { id: 'about', label: 'О питомнике' },
     { id: 'producers', label: 'Производители' },
     { id: 'kittens', label: 'Котята' },
+    { id: 'gallery', label: 'Галерея' },
     { id: 'exhibitions', label: 'Выставки' },
     { id: 'blog', label: 'Блог' },
     { id: 'articles', label: 'Статьи' },

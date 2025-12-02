@@ -6,6 +6,7 @@ import HomePage from '@/pages/HomePage';
 import AboutPage from '@/pages/AboutPage';
 import ProducersPage from '@/pages/ProducersPage';
 import KittensPage from '@/pages/KittensPage';
+import GalleryPage from '@/pages/GalleryPage';
 import ExhibitionsPage from '@/pages/ExhibitionsPage';
 import BlogPage from '@/pages/BlogPage';
 import ArticlesPage from '@/pages/ArticlesPage';
@@ -24,6 +25,8 @@ function App() {
         return <ProducersPage />;
       case 'kittens':
         return <KittensPage />;
+      case 'gallery':
+        return <GalleryPage />;
       case 'exhibitions':
         return <ExhibitionsPage />;
       case 'blog':
