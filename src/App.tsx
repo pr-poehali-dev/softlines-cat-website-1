@@ -7,6 +7,7 @@ import AboutPage from '@/pages/AboutPage';
 import ProducersPage from '@/pages/ProducersPage';
 import KittensPage from '@/pages/KittensPage';
 import ExhibitionsPage from '@/pages/ExhibitionsPage';
+import ArticlesPage from '@/pages/ArticlesPage';
 import ContactsPage from '@/pages/ContactsPage';
 
 function App() {
@@ -24,6 +25,8 @@ function App() {
         return <KittensPage />;
       case 'exhibitions':
         return <ExhibitionsPage />;
+      case 'articles':
+        return <ArticlesPage />;
       case 'contacts':
         return <ContactsPage />;
       default:
