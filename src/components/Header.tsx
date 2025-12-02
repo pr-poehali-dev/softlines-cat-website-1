@@ -16,6 +16,7 @@ export default function Header({ onNavigate, currentPage }: HeaderProps) {
     { id: 'producers', label: 'Производители' },
     { id: 'kittens', label: 'Котята' },
     { id: 'exhibitions', label: 'Выставки' },
+    { id: 'blog', label: 'Блог' },
     { id: 'articles', label: 'Статьи' },
     { id: 'contacts', label: 'Контакты' }
   ];
