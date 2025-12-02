@@ -1,28 +1,43 @@
+import { useState } from 'react';
+import { Toaster } from '@/components/ui/toaster';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import HomePage from '@/pages/HomePage';
+import AboutPage from '@/pages/AboutPage';
+import ProducersPage from '@/pages/ProducersPage';
+import KittensPage from '@/pages/KittensPage';
+import ContactsPage from '@/pages/ContactsPage';
 
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
-import NotFound from "./pages/NotFound";
+function App() {
+  const [currentPage, setCurrentPage] = useState('home');
 
-const queryClient = new QueryClient();
+  const renderPage = () => {
+    switch (currentPage) {
+      case 'home':
+        return <HomePage onNavigate={setCurrentPage} />;
+      case 'about':
+        return <AboutPage />;
+      case 'producers':
+        return <ProducersPage />;
+      case 'kittens':
+        return <KittensPage />;
+      case 'contacts':
+        return <ContactsPage />;
+      default:
+        return <HomePage onNavigate={setCurrentPage} />;
+    }
+  };
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
+  return (
+    <div className="min-h-screen flex flex-col">
+      <Header currentPage={currentPage} onNavigate={setCurrentPage} />
+      <main className="flex-1">
+        {renderPage()}
+      </main>
+      <Footer onNavigate={setCurrentPage} />
       <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+    </div>
+  );
+}
 
 export default App;
